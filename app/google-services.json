@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "594259624577",
+    "firebase_url": "https://pp2ecoapps-default-rtdb.firebaseio.com",
+    "project_id": "pp2ecoapps",
+    "storage_bucket": "pp2ecoapps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594259624577:android:8db6d23f1f5118b7fe8380",
+        "android_client_info": {
+          "package_name": "com.example.proyecto2android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594259624577-tvmr8r69bk2o8c7hkuj2jicspeipddpj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.proyecto2android",
+            "certificate_hash": "55c64b513ecc631a6082284fc737dd99f9ce89c0"
+          }
+        },
+        {
+          "client_id": "594259624577-t966dfal0jmhp4mk1863lbimibg6ke17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ1xEUps61HbsmnT_B_IStT033Y--FWe4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594259624577-t966dfal0jmhp4mk1863lbimibg6ke17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
