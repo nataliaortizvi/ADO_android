@@ -16,6 +16,8 @@ public class sisbenPerros extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sisben_perros);
 
+        //aqui se ve el feed de todos los perros que tiene la fundacion Sisben para perros(la primera que aparece en el home)
+
         btnInfo =  findViewById(R.id.btnInfo);
 
         btnInfo.setOnClickListener(this);

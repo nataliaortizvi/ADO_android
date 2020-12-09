@@ -13,6 +13,8 @@ public class escogeAnimal extends AppCompatActivity  implements View.OnClickList
  private ImageView btnGatos;
  private TextView Perros;
 
+ //aqui se escoge si quiere ver perros o gatos
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
