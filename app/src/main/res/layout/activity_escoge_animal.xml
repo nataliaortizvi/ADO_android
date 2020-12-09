@@ -8,14 +8,14 @@
 
     <ImageView
         android:id="@+id/btnPerros"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="368dp"
+        android:layout_marginBottom="344dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@drawable/perr" />
+        tools:srcCompat="@drawable/perrosonr" />
 
     <ImageView
         android:id="@+id/btnGatos"
@@ -28,7 +28,7 @@
         app:srcCompat="@drawable/gat" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Perros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/dmsans_bold"

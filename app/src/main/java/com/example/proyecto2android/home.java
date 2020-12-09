@@ -2,10 +2,15 @@ package com.example.proyecto2android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.Switch;
 
-public class home extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+
+public class home extends AppCompatActivity implements View.OnClickListener {
 
 private ImageView btnSisben;
     private ImageView btnVet;
@@ -23,6 +28,33 @@ private ImageView btnSisben;
         btnAmor  =  findViewById(R.id.btnAmor);
         btnMundo  =  findViewById(R.id.btnMundo);
 
-        //nada
+        btnSisben.setOnClickListener(this);
+        btnVet.setOnClickListener(this);
+        btnAmor.setOnClickListener(this);
+        btnMundo.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnSisben:
+
+                Intent p = new Intent(this,escogeAnimal.class);
+                startActivity(p);
+                finish();
+
+                break;
+            case R.id.btnVet:
+
+                break;
+            case R.id.btnAmor:
+
+                break;
+            case R.id.btnMundo:
+
+                break;
+        }
+
     }
 }
