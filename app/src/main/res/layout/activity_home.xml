@@ -23,14 +23,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:layout_width="409dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="70dp"
@@ -74,5 +66,107 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/btnFAmor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnFsisben"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto"
+        app:srcCompat="@drawable/fo2" />
+
+    <ImageView
+        android:id="@+id/btnFsisben"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto"
+        app:srcCompat="@drawable/fo1" />
+
+    <ImageView
+        android:id="@+id/btnFmundo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnFvet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFAmor"
+        app:srcCompat="@drawable/fo3" />
+
+    <ImageView
+        android:id="@+id/btnFvet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFsisben"
+        app:srcCompat="@drawable/fo4" />
+
+    <TextView
+        android:id="@+id/texto1"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/dmsans_bold"
+        android:text="Fundación Amor animal"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+
+        app:layout_constraintEnd_toEndOf="@+id/btnFAmor"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/btnFAmor"
+        app:layout_constraintTop_toTopOf="@+id/btnFAmor" />
+
+    <TextView
+        android:id="@+id/texto2"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/dmsans_bold"
+        android:text="Fundación Sisben para Perros y Gatos"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+
+        app:layout_constraintEnd_toEndOf="@+id/btnFsisben"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/btnFsisben"
+        app:layout_constraintTop_toTopOf="@+id/btnFsisben" />
+
+    <TextView
+        android:id="@+id/texto3"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/dmsans_bold"
+        android:text="Fundación Mundo Animal"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+
+        app:layout_constraintEnd_toEndOf="@+id/btnFmundo"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/btnFmundo"
+        app:layout_constraintTop_toTopOf="@+id/btnFmundo" />
+
+    <TextView
+        android:id="@+id/texto4"
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/dmsans_bold"
+        android:text="Fundación veterinaria huellitas"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+
+        app:layout_constraintEnd_toEndOf="@+id/btnFvet"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/btnFvet"
+        app:layout_constraintTop_toTopOf="@+id/btnFvet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
