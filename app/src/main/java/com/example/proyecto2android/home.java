@@ -7,20 +7,22 @@ import android.widget.ImageView;
 
 public class home extends AppCompatActivity {
 
-    private ImageView btnFAmor;
-    private ImageView btnFsisben;
-    private ImageView btnFmundo;
-    private ImageView btnFvet;
+private ImageView btnSisben;
+    private ImageView btnVet;
+    private ImageView btnAmor;
+    private ImageView btnMundo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        btnFAmor  =  findViewById(R.id.btnFAmor);
-        btnFsisben  =  findViewById(R.id.btnFsisben);
-        btnFmundo  =  findViewById(R.id.btnFmundo);
-        btnFmundo  =  findViewById(R.id.btnFmundo);
+        btnSisben  =  findViewById(R.id.btnSisben);
+        btnVet  =  findViewById(R.id.btnVet);
+        btnAmor  =  findViewById(R.id.btnAmor);
+        btnMundo  =  findViewById(R.id.btnMundo);
+
 
     }
 }
