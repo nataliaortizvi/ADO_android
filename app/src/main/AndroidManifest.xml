@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DocPerroSisbenUno"></activity>
+        <activity android:name=".gatoUnoInfo"></activity>
+        <activity android:name=".DocPerroSisbenUno" />
         <activity android:name=".infoPerroUnoSisben" />
         <activity android:name=".sisbenPerros" />
         <activity android:name=".signn" />

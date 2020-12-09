@@ -41,6 +41,17 @@ public class escogeAnimal extends AppCompatActivity  implements View.OnClickList
                 finish();
 
                 break;
+            case R.id.btnGatos:
+
+                Intent y = new Intent(this, gatoUnoInfo.class);
+
+                startActivity(y);
+
+                finish();
+
+                break;
+
+
 
         }
     }
