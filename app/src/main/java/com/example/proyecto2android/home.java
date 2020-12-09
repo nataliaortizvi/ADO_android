@@ -23,6 +23,6 @@ private ImageView btnSisben;
         btnAmor  =  findViewById(R.id.btnAmor);
         btnMundo  =  findViewById(R.id.btnMundo);
 
-
+        //nada
     }
 }
