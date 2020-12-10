@@ -26,6 +26,7 @@
             android:ems="10"
             android:hint="   Teléfono"
             android:inputType="textPersonName"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,6 +42,7 @@
             android:ems="10"
             android:hint="   Cédula"
             android:inputType="textPersonName"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtelefono" />
@@ -56,6 +58,7 @@
             android:ems="10"
             android:hint="   Estado civil"
             android:inputType="textPersonName"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txestrato" />
@@ -71,6 +74,7 @@
             android:ems="10"
             android:hint="   Salario"
             android:inputType="textPersonName"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txdireccion" />
@@ -86,6 +90,7 @@
             android:ems="10"
             android:hint="   Estrato"
             android:inputType="textPersonName"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txsalario" />
@@ -101,6 +106,7 @@
             android:text="Subir Documento"
             android:textAllCaps="false"
             android:textColor="#5522AA"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -118,6 +124,7 @@
             android:ems="10"
             android:hint="   Dirección"
             android:inputType="textPersonName"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txcedula" />
@@ -128,7 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/dmsans_bold"
         android:text="Documentación"
         android:textColor="#FFFFFF"

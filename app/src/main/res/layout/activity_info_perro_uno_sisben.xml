@@ -61,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="33dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="33dp"
             android:fontFamily="@font/dmsans_regular"
             android:text="Hola! Mi nombre es Toby, soy un cachorro muy timido pero con un gran corazón. Cuando me encontraron en una caja a la orilla de la carretera, me rescataron, me alimentaron, ciudaron y me vacunaron. Ahora estoy buscando una familia que me ame."
@@ -75,14 +75,12 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="300dp"
             android:fontFamily="@font/dmsans_regular"
             android:text="Pelaje: corto"
             android:textColor="#7952B9"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -90,7 +88,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="298dp"
             android:fontFamily="@font/dmsans_regular"
@@ -105,7 +103,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="277dp"
             android:fontFamily="@font/dmsans_regular"
@@ -124,8 +122,10 @@
             android:backgroundTint="#FFB900"
             android:fontFamily="@font/dmsans_bold"
             android:text="Iniciar proceso de adopción"
+            android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#7952B9"
+            android:textColor="#4F20B4"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -143,7 +143,8 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/img" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
