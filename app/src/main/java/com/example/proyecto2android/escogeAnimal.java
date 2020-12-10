@@ -43,7 +43,7 @@ public class escogeAnimal extends AppCompatActivity  implements View.OnClickList
                 break;
             case R.id.btnGatos:
 
-                Intent y = new Intent(this, gatoUnoInfo.class);
+                Intent y = new Intent(this, SisbenGatos.class);
 
                 startActivity(y);
 
