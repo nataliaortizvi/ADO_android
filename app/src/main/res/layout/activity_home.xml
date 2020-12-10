@@ -24,6 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/btnHome"
+            android:id="@+id/home"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginBottom="16dp"
@@ -42,7 +43,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnUsuario"
+            android:id="@+id/perfil"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginEnd="64dp"
@@ -54,7 +55,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btnNotif"
+            android:id="@+id/notif"
             android:layout_width="20dp"
             android:layout_height="25dp"
             android:layout_marginStart="64dp"
@@ -67,108 +68,111 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/btnSisben"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnVet"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fotoq" />
-
-    <ImageView
-        android:id="@+id/btnVet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.929"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fotor" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageView
-        android:id="@+id/btnAmor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnMundo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSisben"
-        app:srcCompat="@drawable/fotow" />
+        <ImageView
+            android:id="@+id/btnMundo"
+            android:layout_width="wrap_content"
+            android:layout_height="400px"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnVet"
+            app:srcCompat="@drawable/fotoe" />
 
-    <ImageView
-        android:id="@+id/btnMundo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.929"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVet"
-        app:srcCompat="@drawable/fotoe" />
+        <ImageView
+            android:id="@+id/btnSisben"
+            android:layout_width="wrap_content"
+            android:layout_height="400px"
+            app:layout_constraintEnd_toStartOf="@+id/btnVet"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fotoq" />
 
-    <TextView
-        android:id="@+id/texto1"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/dmsans_bold"
+        <ImageView
+            android:id="@+id/btnAmor"
+            android:layout_width="wrap_content"
+            android:layout_height="400px"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnMundo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSisben"
+            app:srcCompat="@drawable/fotow" />
 
-        android:text="Fundación Amor animal"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/btnAmor"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="@+id/btnAmor"
-        app:layout_constraintTop_toTopOf="@+id/btnAmor" />
+        <ImageView
+            android:id="@+id/btnVet"
+            android:layout_width="wrap_content"
+            android:layout_height="400px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fotor" />
 
-    <TextView
-        android:id="@+id/texto2"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
+        <TextView
+            android:id="@+id/texto1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_bold"
 
-        android:fontFamily="@font/dmsans_bold"
-        android:text="Fundación Sisben para Perros y Gatos"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/btnSisben"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnSisben"
-        app:layout_constraintTop_toTopOf="@+id/btnSisben" />
+            android:text="Fundación Amor animal"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAmor"
+            app:layout_constraintEnd_toStartOf="@+id/btnMundo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnAmor" />
 
-    <TextView
-        android:id="@+id/texto4"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:fontFamily="@font/dmsans_bold"
-        android:text="Fundación veterinaria huellitas"
+        <TextView
+            android:id="@+id/texto3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Fundación Mundo Animal"
 
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/btnVet"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="@+id/btnVet"
-        app:layout_constraintTop_toTopOf="@+id/btnVet" />
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMundo"
+            app:layout_constraintEnd_toEndOf="@+id/btnMundo"
+            app:layout_constraintStart_toStartOf="@+id/btnMundo"
+            app:layout_constraintTop_toTopOf="@+id/btnMundo" />
 
-    <TextView
-        android:id="@+id/texto3"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:fontFamily="@font/dmsans_bold"
-        android:text="Fundación Mundo Animal"
+        <TextView
+            android:id="@+id/texto4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Fundación veterinaria huellitas"
 
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/btnMundo"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="@+id/btnMundo"
-        app:layout_constraintTop_toTopOf="@+id/btnMundo" />
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/btnVet"
+            app:layout_constraintEnd_toEndOf="@+id/btnVet"
+            app:layout_constraintStart_toEndOf="@+id/btnSisben"
+            app:layout_constraintTop_toTopOf="@+id/btnVet" />
+
+        <TextView
+            android:id="@+id/texto2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/dmsans_bold"
+            android:text="Fundación Sisben para Perros y Gatos"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSisben"
+            app:layout_constraintEnd_toEndOf="@+id/btnSisben"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnSisben" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

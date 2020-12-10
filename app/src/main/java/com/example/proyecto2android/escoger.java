@@ -5,48 +5,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
 
-public class escogeAnimal extends AppCompatActivity  implements View.OnClickListener {
- private ImageView btnPerros;
- private ImageView btnGatos;
- private TextView Perros;
+public class escoger extends AppCompatActivity implements View.OnClickListener {
 
- //aqui se escoge si quiere ver perros o gatos
+    private Button btnPerros, btnGato;
+
+    //aqui se escoge si quiere ver perros o gatos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_escoge_animal);
+        setContentView(R.layout.activity_escoger);
+
         //estos son los botones de gato y perro
         btnPerros  =  findViewById(R.id.btnPerros);
-        btnGatos  =  findViewById(R.id.btnGatos);
+        btnGato  =  findViewById(R.id.btnGato);
 
-        Perros  =  findViewById(R.id.Perros);
-
-
-        Perros.setOnClickListener(this);
-        btnGatos.setOnClickListener(this);
+        btnPerros.setOnClickListener(this);
+        btnGato.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.Perros:
-
+            case R.id.btnPerros:
                 Intent o = new Intent(this, sisbenPerros.class);
-
                 startActivity(o);
-
                 finish();
 
                 break;
-            case R.id.btnGatos:
-
-                Intent y = new Intent(this, gatoUnoInfo .class);
-
+            case R.id.btnGato:
+                Intent y = new Intent(this, SisbenGatos.class);
                 startActivity(y);
-
                 finish();
 
                 break;
@@ -54,5 +45,6 @@ public class escogeAnimal extends AppCompatActivity  implements View.OnClickList
 
 
         }
+
     }
 }

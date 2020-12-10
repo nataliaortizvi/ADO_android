@@ -3,18 +3,28 @@ package com.example.proyecto2android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class DocPerroSisbenUno extends AppCompatActivity {
+public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText txestado;
-    private Button uploadbt;
     private FirebaseDatabase db;
     private FirebaseAuth auth;
+
+    private EditText txtelefono;
+    private EditText txcedula;
+    private EditText txdireccion;
+    private EditText txsalario;
+    private EditText txtestrato;
+    private EditText txestado;
+
+    private Button uploadBtn;
+
 
     //aqui se pondrá la info que se debe llenar para hacer el proceso de adopción, este es eldocumento para el perro 1 de la fundación sisben para perros
 
@@ -25,9 +35,45 @@ public class DocPerroSisbenUno extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc_perro_sisben_uno);
 
-        txestado  =  findViewById(R.id.txestado);
-        uploadbt  =  findViewById(R.id.uploadbt);
-
         db = FirebaseDatabase.getInstance();
+        auth = FirebaseAuth.getInstance();
+
+        txtelefono = findViewById(R.id.txtelefono);
+        txcedula = findViewById(R.id.txcedula);
+        txdireccion = findViewById(R.id.txdireccion);
+        txsalario = findViewById(R.id.txsalario);
+        txtestrato = findViewById(R.id.txestrato);
+        txestado  =  findViewById(R.id.txestado);
+
+        uploadBtn  =  findViewById(R.id.uploadBtn);
+
+        uploadBtn.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.uploadBtn:
+                String id = db.getReference().child("Ado").child("Adoptante").push().getKey();
+                String tel = txtelefono.getText().toString();
+                String cc = txcedula.getText().toString();
+                String dir = txdireccion.getText().toString();
+                String sal = txsalario.getText().toString();
+                String estra = txtestrato.getText().toString();
+                String esta = txestado.getText().toString();
+                DatabaseReference reference = db.getReference().child("Ado").child("Adoptante");
+
+                Adoptante adoptante = new Adoptante(
+                        id,
+                        txtelefono.getText().toString(),
+                        txcedula.getText().toString(),
+                        txdireccion.getText().toString(),
+                        txsalario.getText().toString(),
+                        txtestrato.getText().toString(),
+                        txestado.getText().toString()
+                );
+                reference.setValue(adoptante);
+                break;
+        }
     }
 }

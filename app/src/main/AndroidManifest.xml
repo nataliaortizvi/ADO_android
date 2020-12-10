@@ -9,21 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".gatoUnoInfo"></activity>
+        <activity android:name=".escoger"></activity>
         <activity android:name=".DocPerroSisbenUno" />
         <activity android:name=".infoPerroUnoSisben" />
         <activity android:name=".sisbenPerros" />
         <activity android:name=".signn" />
-        <activity android:name=".home" />
-        <activity android:name=".login" />
-        <activity android:name=".escogeAnimal" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".login" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
