@@ -8,8 +8,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,6 +27,7 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
     private EditText txestado;
 
     private Button uploadBtn;
+    String fundacion;
 
 
     //aqui se pondrá la info que se debe llenar para hacer el proceso de adopción, este es eldocumento para el perro 1 de la fundación sisben para perros
@@ -48,20 +52,29 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
         uploadBtn  =  findViewById(R.id.uploadBtn);
 
         uploadBtn.setOnClickListener(this);
+        fundacion = getSharedPreferences("fundacioncita",MODE_PRIVATE).getString("fundacion","NO_FUNDACION");
+
+
+
+
+
     }
+
+
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.uploadBtn:
-                String id = db.getReference().child("Ado").child("Adoptante").push().getKey();
+                String id = db.getReference().child("Ado").child("fundacion").push().getKey();
                 String tel = txtelefono.getText().toString();
                 String cc = txcedula.getText().toString();
                 String dir = txdireccion.getText().toString();
                 String sal = txsalario.getText().toString();
                 String estra = txtestrato.getText().toString();
                 String esta = txestado.getText().toString();
-                DatabaseReference reference = db.getReference().child("Ado").child("Adoptante");
+                DatabaseReference reference = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes");
+
 
                 Adoptante adoptante = new Adoptante(
                         id,
