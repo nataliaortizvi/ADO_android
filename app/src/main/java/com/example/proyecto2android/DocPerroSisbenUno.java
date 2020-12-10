@@ -66,14 +66,14 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.uploadBtn:
-                String id = db.getReference().child("Ado").child("fundacion").push().getKey();
+                String id = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes").push().getKey();
                 String tel = txtelefono.getText().toString();
                 String cc = txcedula.getText().toString();
                 String dir = txdireccion.getText().toString();
                 String sal = txsalario.getText().toString();
                 String estra = txtestrato.getText().toString();
                 String esta = txestado.getText().toString();
-                DatabaseReference reference = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes");
+                DatabaseReference reference = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes").child(id);
 
 
                 Adoptante adoptante = new Adoptante(
