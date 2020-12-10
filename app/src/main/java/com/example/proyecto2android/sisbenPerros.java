@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 
 public class sisbenPerros extends AppCompatActivity implements View.OnClickListener{
-    private Button btnInfo;
 
+    private Button btnInfo, btninfo2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,10 @@ public class sisbenPerros extends AppCompatActivity implements View.OnClickListe
         //aqui se ve el feed de todos los perros que tiene la fundacion Sisben para perros(la primera que aparece en el home)
 
         btnInfo =  findViewById(R.id.btnInfo);
+        btninfo2 =  findViewById(R.id.btninfo2);
 
         btnInfo.setOnClickListener(this);
+        btninfo2.setOnClickListener(this);
 
     }
 
@@ -28,10 +30,12 @@ public class sisbenPerros extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnInfo:
-
                 Intent p = new Intent(this,infoPerroUnoSisben.class);
                 startActivity(p);
                 finish();
+
+                break;
+            case R.id.btninfo2:
 
                 break;
         }

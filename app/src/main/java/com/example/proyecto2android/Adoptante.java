@@ -2,20 +2,20 @@ package com.example.proyecto2android;
 
 public class Adoptante {
 
-    private String id, tel, cc, dir, sal, estra, esta;
+    private String id, telelefono, cc, direccion, salario, estrato, estado;
 
     public Adoptante () {
 
     }
 
-    public Adoptante (String id, String tel, String cc, String dir, String sal, String estra, String esta) {
+    public Adoptante(String id, String telelefono, String cc, String direccion, String salario, String estrato, String estado) {
         this.id = id;
-        this.tel = tel;
+        this.telelefono = telelefono;
         this.cc = cc;
-        this.dir = dir;
-        this.sal = sal;
-        this.estra = estra;
-        this.esta = esta;
+        this.direccion = direccion;
+        this.salario = salario;
+        this.estrato = estrato;
+        this.estado = estado;
     }
 
     public String getId() {
@@ -26,12 +26,12 @@ public class Adoptante {
         this.id = id;
     }
 
-    public String getTel() {
-        return tel;
+    public String getTelelefono() {
+        return telelefono;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setTelelefono(String telelefono) {
+        this.telelefono = telelefono;
     }
 
     public String getCc() {
@@ -42,35 +42,35 @@ public class Adoptante {
         this.cc = cc;
     }
 
-    public String getDir() {
-        return dir;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDir(String dir) {
-        this.dir = dir;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getSal() {
-        return sal;
+    public String getSalario() {
+        return salario;
     }
 
-    public void setSal(String sal) {
-        this.sal = sal;
+    public void setSalario(String salario) {
+        this.salario = salario;
     }
 
-    public String getEstra() {
-        return estra;
+    public String getEstrato() {
+        return estrato;
     }
 
-    public void setEstra(String estra) {
-        this.estra = estra;
+    public void setEstrato(String estrato) {
+        this.estrato = estrato;
     }
 
-    public String getEsta() {
-        return esta;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setEsta(String esta) {
-        this.esta = esta;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
