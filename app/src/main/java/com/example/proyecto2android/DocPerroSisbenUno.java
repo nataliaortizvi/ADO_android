@@ -122,7 +122,8 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
                             txsalario.getText().toString(),
                             txtestrato.getText().toString(),
                             txestado.getText().toString(),
-                            nombre
+                            nombre,
+                            0
 
                     );
 

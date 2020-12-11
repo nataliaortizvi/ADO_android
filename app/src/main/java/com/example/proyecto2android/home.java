@@ -1,5 +1,6 @@
 package com.example.proyecto2android;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -87,7 +88,29 @@ public class home extends AppCompatActivity implements View.OnClickListener {
             notiC = findViewById(R.id.notiC);
 
             recoverUser();
+            recoverSolicitudes();
         }
+    }
+
+    private void recoverSolicitudes() {
+        DatabaseReference ref =  db.getReference().child("Ado").child("fundacion").child("Fundación Sisben para Perros y Gatos").child("solicitudes");
+        ref.addValueEventListener(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot data) {
+                        for(DataSnapshot child : data.getChildren()){
+                            Log.e("sssssss",""+child);
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+
+                    }
+                }
+        );
+
     }
 
     private void recoverUser() {
@@ -102,6 +125,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
                             nombret.setText(userlog.getNombre());
                             correot.setText(userlog.getCorreo());
                             contrat.setText(userlog.getContra());
+
                         }
 
                         @Override
