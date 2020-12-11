@@ -36,7 +36,9 @@ public class sisbenPerros extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.btninfo2:
-
+                Intent z = new Intent(this, infoPerroDosSisben.class);
+                startActivity(z);
+                finish();
                 break;
         }
     }
