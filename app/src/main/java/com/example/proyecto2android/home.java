@@ -43,7 +43,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
 
-        fundacion = "Fundación Sisben para Perros y Gatos";
+
 
         //si no hay un usuario loggeado entonces dirije al login
         if(auth.getCurrentUser() == null){
@@ -126,7 +126,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         switch (view.getId()){
             case R.id.btnSisben:
                 Intent p = new Intent(this,escoger.class);
-
+                fundacion = "Fundación Sisben para Perros y Gatos";
 
                 SharedPreferences preferences = getSharedPreferences("fundacioncita",MODE_PRIVATE);
                 preferences.edit().putString("fundacion",fundacion).apply();
@@ -138,6 +138,11 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.btnVet:
                 Intent a = new Intent(this,escoger.class);
+                fundacion = "Fundación Veterinaria huellitas";
+
+                SharedPreferences prefe= getSharedPreferences("fundacioncita",MODE_PRIVATE);
+                prefe.edit().putString("fundacion",fundacion).apply();
+
                 startActivity(a);
                 finish();
                 break;

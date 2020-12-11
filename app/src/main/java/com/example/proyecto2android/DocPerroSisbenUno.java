@@ -28,6 +28,8 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
 
     private Button uploadBtn;
     String fundacion;
+    private String nombre;
+    private Adoptante userloguno;
 
 
     //aqui se pondrá la info que se debe llenar para hacer el proceso de adopción, este es eldocumento para el perro 1 de la fundación sisben para perros
@@ -54,10 +56,37 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
         uploadBtn.setOnClickListener(this);
         fundacion = getSharedPreferences("fundacioncita",MODE_PRIVATE).getString("fundacion","NO_FUNDACION");
 
+        recoverUser();
 
 
 
 
+
+
+    }
+
+    private void recoverUser() {
+        if(auth.getCurrentUser() != null){
+            String id = auth.getCurrentUser().getUid();
+
+            db.getReference().child("usuarios").child(id).addListenerForSingleValueEvent( //ONCE
+                    new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot data) {
+                            userloguno = data.getValue(Adoptante.class);
+                            nombre= userloguno.getNombre();
+
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError error) {
+
+                        }
+                    }
+            );
+        }
     }
 
 
@@ -73,6 +102,7 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
                 String sal = txsalario.getText().toString();
                 String estra = txtestrato.getText().toString();
                 String esta = txestado.getText().toString();
+
                 DatabaseReference reference = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes").child(id);
 
 
@@ -83,7 +113,9 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
                         txdireccion.getText().toString(),
                         txsalario.getText().toString(),
                         txtestrato.getText().toString(),
-                        txestado.getText().toString()
+                        txestado.getText().toString(),
+                        nombre
+
                 );
                 reference.setValue(adoptante);
                 break;
