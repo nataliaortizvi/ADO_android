@@ -123,7 +123,7 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
                             txtestrato.getText().toString(),
                             txestado.getText().toString(),
                             nombre,
-                            0
+                            "En proceso"
 
                     );
 

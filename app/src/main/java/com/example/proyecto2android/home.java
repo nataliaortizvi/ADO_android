@@ -1,6 +1,5 @@
 package com.example.proyecto2android;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -12,7 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Switch;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,10 +27,13 @@ public class home extends AppCompatActivity implements View.OnClickListener {
     private ImageView btnSisben, btnVet, btnAmor,btnMundo;
     private Button home, perfil, notif, salirbt;
     private TextView nombret, correot, contrat, titulohome, tituloperfil, titulonoti;
+    private ListView laLista;
 
     private ConstraintLayout homeC, profileC, notiC;
     private String usuarioIn,fundacion;
     private Usuario userlog;
+
+    private AdoptanteAdaptador adapter;
 
     private FirebaseAuth auth;
     private FirebaseDatabase db;
@@ -44,7 +46,8 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
 
-
+        adapter = new AdoptanteAdaptador();
+        laLista.setAdapter(adapter);
 
         //si no hay un usuario loggeado entonces dirije al login
         if(auth.getCurrentUser() == null){
@@ -85,21 +88,28 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
             //elementos del notificaciones
             titulonoti = findViewById(R.id.titulonoti);
+            laLista = findViewById(R.id.laLista);
             notiC = findViewById(R.id.notiC);
 
             recoverUser();
             recoverSolicitudes();
+
         }
     }
-
     private void recoverSolicitudes() {
+        if(auth.getCurrentUser() != null) {
+            String id = auth.getCurrentUser().getUid();
+        }
         DatabaseReference ref =  db.getReference().child("Ado").child("fundacion").child("Fundación Sisben para Perros y Gatos").child("solicitudes");
         ref.addValueEventListener(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot data) {
+                        adapter.clear();
                         for(DataSnapshot child : data.getChildren()){
                             Log.e("sssssss",""+child);
+                            Adoptante adoptante = child.getValue(Adoptante.class);
+                            adapter.addAdoptante(adoptante);
                         }
 
                     }
