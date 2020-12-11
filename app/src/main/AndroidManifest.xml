@@ -9,12 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".infoPerroDosSisben"></activity>
+        <activity android:name=".gatoInfoDos"></activity>
         <activity android:name=".escoger" />
         <activity android:name=".DocPerroSisbenUno" />
         <activity android:name=".infoPerroUnoSisben" />
         <activity android:name=".sisbenPerros" />
         <activity android:name=".signn" />
+        <activity android:name=".SisbenGatos" />
+        <activity android:name=".gatoUnoInfo" />
         <activity android:name=".home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

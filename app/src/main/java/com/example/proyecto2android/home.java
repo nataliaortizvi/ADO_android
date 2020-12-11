@@ -46,8 +46,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
 
-        adapter = new AdoptanteAdaptador();
-        laLista.setAdapter(adapter);
+
 
         //si no hay un usuario loggeado entonces dirije al login
         if(auth.getCurrentUser() == null){
@@ -91,27 +90,28 @@ public class home extends AppCompatActivity implements View.OnClickListener {
             laLista = findViewById(R.id.laLista);
             notiC = findViewById(R.id.notiC);
 
+            //Adapatador
+            adapter = new AdoptanteAdaptador();
+            laLista.setAdapter(adapter);
+
             recoverUser();
             recoverSolicitudes();
 
         }
     }
     private void recoverSolicitudes() {
-        if(auth.getCurrentUser() != null) {
-            String id = auth.getCurrentUser().getUid();
-        }
         DatabaseReference ref =  db.getReference().child("Ado").child("fundacion").child("Fundación Sisben para Perros y Gatos").child("solicitudes");
         ref.addValueEventListener(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot data) {
+                        //Limpiar cada vez
                         adapter.clear();
                         for(DataSnapshot child : data.getChildren()){
                             Log.e("sssssss",""+child);
                             Adoptante adoptante = child.getValue(Adoptante.class);
                             adapter.addAdoptante(adoptante);
                         }
-
                     }
 
                     @Override

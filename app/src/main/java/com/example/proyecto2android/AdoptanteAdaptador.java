@@ -18,36 +18,32 @@ public class AdoptanteAdaptador extends BaseAdapter {
     private FirebaseDatabase db;
     private FirebaseAuth auth;
 
-    private Adoptante adoptantes;
-    private ArrayList<Adoptante> adoptante;
-
-
-
-    private String theStatus;
+    //Data
+    private ArrayList<Adoptante> adoptantes;
 
     public AdoptanteAdaptador () {
-        adoptante = new ArrayList<>();
+        adoptantes = new ArrayList<>();
     }
 
-    public void addAdoptante (Adoptante adoptantes) {
-        adoptante.add(adoptantes);
+    public void addAdoptante (Adoptante adoptante) {
+        adoptantes.add(adoptante);
         notifyDataSetChanged();
     }
 
     public void clear() {
-        adoptante.clear();
+        adoptantes.clear();
         notifyDataSetChanged();
     }
 
 
     @Override
     public int getCount() {
-        return adoptante.size();
+        return adoptantes.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return adoptante.get(position);
+        return adoptantes.get(position);
     }
 
     @Override
@@ -55,29 +51,34 @@ public class AdoptanteAdaptador extends BaseAdapter {
         return position;
     }
 
+    //Adaptar de UI a un arraylist
     @Override
     public View getView(int pos, View renglon, ViewGroup lista) {
+
         LayoutInflater inflater = LayoutInflater.from(lista.getContext());
         View renglonView = inflater.inflate(R.layout.row, null);
 
-        Adoptante adoptantes = adoptante.get(pos);
+        //Posición
+        Adoptante adoptante = adoptantes.get(pos);
 
+        //Referenciamos
         Button btnIr = renglonView.findViewById(R.id.btnIr);
         TextView status = renglonView.findViewById(R.id.status);
         TextView solicitud = renglonView.findViewById(R.id.solicitud);
 
-        solicitud.setText(adoptantes.getId());
-        status.setText(adoptantes.getStatus());
+        solicitud.setText(adoptante.getId());
+        status.setText(adoptante.getStatus());
 
-        btnIr.setOnClickListener(
+       /* btnIr.setOnClickListener(
                 (v) -> {
-                    String id = adoptantes.getId();
+                    String id = adoptant.getId();
                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Ado").child("fundacion").child("Fundación Sisben para Perros y Gatos").child("solicitudes").child(id);
                     DatabaseReference refs = FirebaseDatabase.getInstance().getReference().child("Ado").child("fundacion").child("Fundación Veterinaria huellitas").child("solicitudes").child(id);
                     ref.setValue(null);
                     refs.setValue(null);
                 }
-        );
+        );*/
+
         return renglonView;
         }
 

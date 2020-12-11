@@ -18,7 +18,7 @@ public class infoPerroUnoSisben extends AppCompatActivity  implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_perro_uno_sisben);
 
-        btnAdop  =  findViewById(R.id.btnAdop);
+        btnAdop  =  findViewById(R.id.btnAdop3);
         btnAdop.setOnClickListener(this);
 
 
@@ -28,10 +28,10 @@ public class infoPerroUnoSisben extends AppCompatActivity  implements View.OnCli
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnAdop:
+            case R.id.btnAdop3:
 
-                Intent u = new Intent(this, DocPerroSisbenUno.class);
-                startActivity(u);
+                Intent z = new Intent(this, DocPerroSisbenUno.class);
+                startActivity(z);
                 finish();
 
                 break;
