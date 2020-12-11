@@ -1,14 +1,17 @@
 package com.example.proyecto2android;
 
+import com.google.firebase.auth.FirebaseUser;
+
 public class Adoptante {
 
-    private String id, telelefono, cc, direccion, salario, estrato, estado;
+    private String id, telelefono, cc, direccion, salario, estrato, estado,nombre;
+
 
     public Adoptante () {
 
     }
 
-    public Adoptante(String id, String telelefono, String cc, String direccion, String salario, String estrato, String estado) {
+    public Adoptante(String id, String telelefono, String cc, String direccion, String salario, String estrato, String estado, String nombre) {
         this.id = id;
         this.telelefono = telelefono;
         this.cc = cc;
@@ -16,6 +19,17 @@ public class Adoptante {
         this.salario = salario;
         this.estrato = estrato;
         this.estado = estado;
+        this.nombre = nombre;
+
+
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getId() {

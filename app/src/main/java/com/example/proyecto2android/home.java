@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,7 +29,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
     private TextView nombret, correot, contrat, titulohome, tituloperfil, titulonoti;
 
     private ConstraintLayout homeC, profileC, notiC;
-    private String usuarioIn;
+    private String usuarioIn,fundacion;
     private Usuario userlog;
 
     private FirebaseAuth auth;
@@ -41,6 +42,8 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
+
+
 
         //si no hay un usuario loggeado entonces dirije al login
         if(auth.getCurrentUser() == null){
@@ -123,6 +126,11 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         switch (view.getId()){
             case R.id.btnSisben:
                 Intent p = new Intent(this,escoger.class);
+                fundacion = "Fundación Sisben para Perros y Gatos";
+
+                SharedPreferences preferences = getSharedPreferences("fundacioncita",MODE_PRIVATE);
+                preferences.edit().putString("fundacion",fundacion).apply();
+
                 startActivity(p);
                 finish();
 
@@ -130,6 +138,11 @@ public class home extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.btnVet:
                 Intent a = new Intent(this,escoger.class);
+                fundacion = "Fundación Veterinaria huellitas";
+
+                SharedPreferences prefe= getSharedPreferences("fundacioncita",MODE_PRIVATE);
+                prefe.edit().putString("fundacion",fundacion).apply();
+
                 startActivity(a);
                 finish();
                 break;
