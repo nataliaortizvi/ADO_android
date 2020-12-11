@@ -46,8 +46,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
 
-        adapter = new AdoptanteAdaptador();
-        laLista.setAdapter(adapter);
+
 
         //si no hay un usuario loggeado entonces dirije al login
         if(auth.getCurrentUser() == null){
@@ -91,6 +90,10 @@ public class home extends AppCompatActivity implements View.OnClickListener {
             laLista = findViewById(R.id.laLista);
             notiC = findViewById(R.id.notiC);
 
+            //Adapatador
+            adapter = new AdoptanteAdaptador();
+            laLista.setAdapter(adapter);
+
             recoverUser();
             recoverSolicitudes();
 
@@ -105,8 +108,8 @@ public class home extends AppCompatActivity implements View.OnClickListener {
                         adapter.clear();
                         for(DataSnapshot child : data.getChildren()){
                             Log.e("sssssss",""+child);
-                            Adoptante adop = child.getValue(Adoptante.class);
-                            adapter.addAdoptante(adop);
+                            Adoptante adoptante = child.getValue(Adoptante.class);
+                            adapter.addAdoptante(adoptante);
                         }
                     }
 
