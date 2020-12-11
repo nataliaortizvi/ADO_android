@@ -105,6 +105,7 @@ public class home extends AppCompatActivity implements View.OnClickListener {
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot data) {
+                        //Limpiar cada vez
                         adapter.clear();
                         for(DataSnapshot child : data.getChildren()){
                             Log.e("sssssss",""+child);
