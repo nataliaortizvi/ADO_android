@@ -69,15 +69,15 @@ public class AdoptanteAdaptador extends BaseAdapter {
         solicitud.setText(adoptante.getId());
         status.setText(adoptante.getStatus());
 
-       /* btnIr.setOnClickListener(
+       btnIr.setOnClickListener(
                 (v) -> {
-                    String id = adoptant.getId();
+                    String id = adoptante.getId();
                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Ado").child("fundacion").child("Fundación Sisben para Perros y Gatos").child("solicitudes").child(id);
                     DatabaseReference refs = FirebaseDatabase.getInstance().getReference().child("Ado").child("fundacion").child("Fundación Veterinaria huellitas").child("solicitudes").child(id);
                     ref.setValue(null);
                     refs.setValue(null);
                 }
-        );*/
+        );
 
         return renglonView;
         }

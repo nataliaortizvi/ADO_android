@@ -114,6 +114,7 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
                     DatabaseReference reference = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes").child(id);
 
 
+
                     Adoptante adoptante = new Adoptante(
                             id,
                             txtelefono.getText().toString(),
