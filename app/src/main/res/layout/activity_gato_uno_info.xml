@@ -26,7 +26,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/dmsans_bold"
-        android:text="Timy"
+        android:text="Mono"
         android:textColor="#7952B9"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/dmsans_regular"
-        android:text="Edad: 2 meses"
+        android:text="Edad: 2 años"
         android:textColor="#7952B9"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/timy" />
+        app:srcCompat="@drawable/gatoa" />
 
     <TextView
         android:id="@+id/textView19"
@@ -100,7 +100,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/dmsans_regular"
-        android:text="Hola! Mi nombre es Toby, soy un cachorro muy timido pero con un gran corazón. Cuando me encontraron en una caja a la orilla de la carretera, me rescataron, me alimentaron, ciudaron y me vacunaron. Ahora estoy buscando una familia que me ame."
+        android:text="Hola! Mi nombre es Mono, soy un gatito muy timido pero con un gran corazón. Cuando me encontraron en una caja a la orilla de la carretera, me rescataron, me alimentaron, ciudaron y me vacunaron. Ahora estoy buscando una familia que me ame."
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,8 +132,12 @@
         android:backgroundTint="#FFB900"
         android:fontFamily="@font/dmsans_bold"
         android:text="Iniciar proceso de adopción"
-        android:textColor="#7952B9"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#4F20B4"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 </androidx.constraintlayout.widget.ConstraintLayout>

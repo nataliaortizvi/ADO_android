@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class SisbenGatos extends AppCompatActivity implements View.OnClickListener {
 
-    private Button adopMonoBtn;
+    private Button adopMonoBtn,adopTimyBtn;
 
 
     @Override
@@ -18,8 +18,11 @@ public class SisbenGatos extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_sisben_gatos);
 
         adopMonoBtn = findViewById(R.id.adopMonoBtn);
+        adopTimyBtn = findViewById(R.id.adopTimyBtn);
+
 
         adopMonoBtn.setOnClickListener(this);
+        adopTimyBtn.setOnClickListener(this);
     }
 
     @Override
@@ -30,6 +33,16 @@ public class SisbenGatos extends AppCompatActivity implements View.OnClickListen
                 Intent i = new Intent (this, gatoUnoInfo.class);
                 startActivity(i);
                 finish();
+                break;
+            case R.id.adopTimyBtn:
+                Intent u = new Intent (this, gatoInfoDos.class);
+                startActivity(u);
+                finish();
+                break;
+
         }
+
+
+
     }
 }
