@@ -12,6 +12,7 @@ public class Usuario {
         this.id = id;
         this.contra = contra;
 
+
     }
 
     public String getNombre() {

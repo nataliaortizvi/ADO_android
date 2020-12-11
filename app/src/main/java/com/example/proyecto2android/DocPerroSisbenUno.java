@@ -2,10 +2,12 @@ package com.example.proyecto2android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -95,29 +97,43 @@ public class DocPerroSisbenUno extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.uploadBtn:
-                String id = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes").push().getKey();
                 String tel = txtelefono.getText().toString();
                 String cc = txcedula.getText().toString();
                 String dir = txdireccion.getText().toString();
                 String sal = txsalario.getText().toString();
                 String estra = txtestrato.getText().toString();
                 String esta = txestado.getText().toString();
+                if( tel.equals("") ||cc.equals("")|| dir.equals("")|| sal.equals("")|| estra.equals("")|| esta.equals("")){
 
-                DatabaseReference reference = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes").child(id);
+                    Toast.makeText(this,"Llene el espacio en blanco",Toast.LENGTH_LONG).show();
+
+                }else {
+                    String id = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes").push().getKey();
 
 
-                Adoptante adoptante = new Adoptante(
-                        id,
-                        txtelefono.getText().toString(),
-                        txcedula.getText().toString(),
-                        txdireccion.getText().toString(),
-                        txsalario.getText().toString(),
-                        txtestrato.getText().toString(),
-                        txestado.getText().toString(),
-                        nombre
+                    DatabaseReference reference = db.getReference().child("Ado").child("fundacion").child(fundacion).child("solicitudes").child(id);
 
-                );
-                reference.setValue(adoptante);
+
+                    Adoptante adoptante = new Adoptante(
+                            id,
+                            txtelefono.getText().toString(),
+                            txcedula.getText().toString(),
+                            txdireccion.getText().toString(),
+                            txsalario.getText().toString(),
+                            txtestrato.getText().toString(),
+                            txestado.getText().toString(),
+                            nombre,
+                            0
+
+                    );
+
+                    reference.setValue(adoptante);
+                    Intent d = new Intent(this, home.class);
+                    startActivity(d);
+                    finish();
+                }
+
+
                 break;
         }
     }
