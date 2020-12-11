@@ -5,13 +5,14 @@ import com.google.firebase.auth.FirebaseUser;
 public class Adoptante {
 
     private String id, telelefono, cc, direccion, salario, estrato, estado,nombre;
+    private int status;
 
 
     public Adoptante () {
 
     }
 
-    public Adoptante(String id, String telelefono, String cc, String direccion, String salario, String estrato, String estado, String nombre) {
+    public Adoptante(String id, String telelefono, String cc, String direccion, String salario, String estrato, String estado, String nombre, int status) {
         this.id = id;
         this.telelefono = telelefono;
         this.cc = cc;
@@ -20,6 +21,7 @@ public class Adoptante {
         this.estrato = estrato;
         this.estado = estado;
         this.nombre = nombre;
+        this.status = status;
 
 
     }
@@ -87,4 +89,8 @@ public class Adoptante {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public int getStatus() { return status; }
+
+    public void setStatus(int status) { this.status = status; }
 }
