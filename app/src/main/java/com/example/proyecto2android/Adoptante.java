@@ -22,7 +22,6 @@ public class Adoptante {
         this.nombre = nombre;
         this.status = status;
 
-
     }
 
     public String getNombre() {

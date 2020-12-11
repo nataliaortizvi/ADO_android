@@ -97,9 +97,6 @@ public class home extends AppCompatActivity implements View.OnClickListener {
         }
     }
     private void recoverSolicitudes() {
-        if(auth.getCurrentUser() != null) {
-            String id = auth.getCurrentUser().getUid();
-        }
         DatabaseReference ref =  db.getReference().child("Ado").child("fundacion").child("Fundación Sisben para Perros y Gatos").child("solicitudes");
         ref.addValueEventListener(
                 new ValueEventListener() {
@@ -108,10 +105,9 @@ public class home extends AppCompatActivity implements View.OnClickListener {
                         adapter.clear();
                         for(DataSnapshot child : data.getChildren()){
                             Log.e("sssssss",""+child);
-                            Adoptante adoptante = child.getValue(Adoptante.class);
-                            adapter.addAdoptante(adoptante);
+                            Adoptante adop = child.getValue(Adoptante.class);
+                            adapter.addAdoptante(adop);
                         }
-
                     }
 
                     @Override

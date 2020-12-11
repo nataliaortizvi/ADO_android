@@ -18,10 +18,7 @@ public class AdoptanteAdaptador extends BaseAdapter {
     private FirebaseDatabase db;
     private FirebaseAuth auth;
 
-    private Adoptante adoptantes;
     private ArrayList<Adoptante> adoptante;
-
-
 
     private String theStatus;
 
@@ -57,27 +54,29 @@ public class AdoptanteAdaptador extends BaseAdapter {
 
     @Override
     public View getView(int pos, View renglon, ViewGroup lista) {
+
         LayoutInflater inflater = LayoutInflater.from(lista.getContext());
         View renglonView = inflater.inflate(R.layout.row, null);
 
-        Adoptante adoptantes = adoptante.get(pos);
+        Adoptante adoptant = adoptante.get(pos);
 
         Button btnIr = renglonView.findViewById(R.id.btnIr);
-        TextView status = renglonView.findViewById(R.id.status);
+        TextView statuss = renglonView.findViewById(R.id.statuss);
         TextView solicitud = renglonView.findViewById(R.id.solicitud);
 
-        solicitud.setText(adoptantes.getId());
-        status.setText(adoptantes.getStatus());
+        solicitud.setText(adoptant.getId());
+        statuss.setText(adoptant.getStatus());
 
         btnIr.setOnClickListener(
                 (v) -> {
-                    String id = adoptantes.getId();
+                    String id = adoptant.getId();
                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Ado").child("fundacion").child("Fundación Sisben para Perros y Gatos").child("solicitudes").child(id);
                     DatabaseReference refs = FirebaseDatabase.getInstance().getReference().child("Ado").child("fundacion").child("Fundación Veterinaria huellitas").child("solicitudes").child(id);
                     ref.setValue(null);
                     refs.setValue(null);
                 }
         );
+
         return renglonView;
         }
 
