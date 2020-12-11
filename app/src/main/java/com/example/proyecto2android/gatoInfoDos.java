@@ -15,7 +15,7 @@ public class gatoInfoDos extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gato_info_dos);
-        btnAdop3 = findViewById(R.id.btnAdop3);
+        btnAdop3 = findViewById(R.id.btnAdop2);
         btnAdop3.setOnClickListener(this);
 
     }
@@ -23,7 +23,7 @@ public class gatoInfoDos extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnAdop3:
+            case R.id.btnAdop2:
 
                 Intent h = new Intent(this, DocPerroSisbenUno.class);
                 startActivity(h);
